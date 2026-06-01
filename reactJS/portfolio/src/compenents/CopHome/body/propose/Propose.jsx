@@ -1,4 +1,4 @@
-import Left from './left';
+import Left from './Left';
 import Right from './Right';
 import Image1 from "../../../../assets/ImageHome/image1.jpg";
 import Image2 from "../../../../assets/ImageHome/image2.jpg";
