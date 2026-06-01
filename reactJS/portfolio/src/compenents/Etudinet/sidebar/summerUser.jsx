@@ -12,7 +12,7 @@ function SummerUser() {
 
   })
   useEffect(()=>{
-    axios.get(`http://localhost:8080/user/${id}`)
+    axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/${id}`)
         .then((response)=>{
           setDataUser({
             username: response.data.firstName +" "+response.data.lastName,

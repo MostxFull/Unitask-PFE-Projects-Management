@@ -21,7 +21,7 @@ export default function EmailManagement() {
     const fetchData = async () => {
       try {
         // Emails reçus
-        const receivedResponse = await axios.get(`http://localhost:8080/inbox/receive/${id}`);
+        const receivedResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/receive/${id}`);
         setReceivedEmails(receivedResponse.data.map(email => ({
           id: email.inboxId,
           sender: email.senderName,
@@ -31,7 +31,7 @@ export default function EmailManagement() {
         })));
 
         // Emails envoyés
-        const sentResponse = await axios.get(`http://localhost:8080/inbox/send/${id}`);
+        const sentResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/send/${id}`);
         setSentEmails(sentResponse.data.map(email => ({
           id: email.inboxId,
           recipient: email.receiverName,
@@ -41,7 +41,7 @@ export default function EmailManagement() {
         })));
 
         // Membres et encadrement
-        const groupResponse = await axios.get(`http://localhost:8080/user/MembresGroup/${id}`);
+        const groupResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/MembresGroup/${id}`);
         const membres = groupResponse.data.MembresGroup || [];
         const encadrement = groupResponse.data.Encadrement ? [groupResponse.data.Encadrement] : [];
         const allMembers = [...membres, ...encadrement];
@@ -66,14 +66,14 @@ export default function EmailManagement() {
     if (!replyContent.trim()) return;
 
     try {
-      await axios.post("http://localhost:8080/inbox/add", {
+      await axios.post("https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/add", {
         subject: `${selectedEmail.subject}`,
         content: replyContent,
         receiverId: selectedEmail.senderId,
         senderId: id
       });
 
-      const sentResponse = await axios.get(`http://localhost:8080/inbox/send/${id}`);
+      const sentResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/send/${id}`);
       setSentEmails(sentResponse.data.map(email => ({
         id: email.inboxId,
         recipient: email.receiverName,
@@ -93,14 +93,14 @@ export default function EmailManagement() {
     if (!newContent.trim() || !selectedMember) return;
 
     try {
-      await axios.post("http://localhost:8080/inbox/add", {
+      await axios.post("https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/add", {
         subject: newSubject,
         content: newContent,
         receiverId: selectedMember.id,
         senderId: id
       });
 
-      const sentResponse = await axios.get(`http://localhost:8080/inbox/send/${id}`);
+      const sentResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/send/${id}`);
       setSentEmails(sentResponse.data.map(email => ({
         id: email.inboxId,
         recipient: email.receiverName,

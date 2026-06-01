@@ -10,7 +10,7 @@ export default function ChatBot() {
     if (!message.trim()) return;
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:8080/bot/chat", {
+      const response = await axios.get("https://mostxfull-unitask-pfe-projects-management.hf.space/bot/chat", {
         params: { prompt: message },
       });
       setChatHistory([...chatHistory, { role: "user", content: message }, { role: "bot", content: response.data }]);

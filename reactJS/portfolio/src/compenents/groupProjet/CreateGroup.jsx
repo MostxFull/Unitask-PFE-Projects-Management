@@ -9,7 +9,7 @@ export default function CreateGroup({ superviseurId, onClose, onGroupCreated }) 
   const [responsable, setResponsable] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/user/getAllEtudiants")
+    axios.get("https://mostxfull-unitask-pfe-projects-management.hf.space/user/getAllEtudiants")
       .then((response) => {
         setStudents(response.data.map(user => ({
           ...user,
@@ -33,7 +33,7 @@ export default function CreateGroup({ superviseurId, onClose, onGroupCreated }) 
       return;
     }
 
-    axios.post("http://localhost:8080/group/create", {
+    axios.post("https://mostxfull-unitask-pfe-projects-management.hf.space/group/create", {
       name: groupName,
       superviseur: superviseurId,
       members: selectedMembers,

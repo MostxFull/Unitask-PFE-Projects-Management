@@ -24,7 +24,7 @@ function AllTasksTable() {
 
   const checkAdminRole = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/user/isAdmin/${id}`);
+      const res = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/isAdmin/${id}`);
       setRole(res.data.isAdmin);
     } catch (error) {
       console.error("Error checking admin role:", error);
@@ -61,13 +61,13 @@ function AllTasksTable() {
   }
 
   const deleteTask = async (taskID) => {
-    const response = await axios.delete(`http://localhost:8080/tache/delete/${taskID}`);
+    const response = await axios.delete(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/delete/${taskID}`);
     alert(response.data);
     window.location.reload();
   }
 
   async function updatetasks() {
-    const response = await axios.put(`http://localhost:8080/tache/update/${tasksUpdate.id}`, formupdate);
+    const response = await axios.put(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/update/${tasksUpdate.id}`, formupdate);
     setTasksUpdate(null); // Fermer le formulaire après mise à jour
     alert(response.data)
     window.location.reload();

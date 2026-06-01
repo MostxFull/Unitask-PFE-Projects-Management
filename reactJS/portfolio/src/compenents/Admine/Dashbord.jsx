@@ -14,8 +14,8 @@ export default function Dashbord() {
         const fetchData = async () => {
             try {
                 const [teachersRes, studentsRes] = await Promise.all([
-                    fetch('http://localhost:8080/user/getAllEnsieg'),
-                    fetch('http://localhost:8080/user/getAllEtudiants')
+                    fetch('https://mostxfull-unitask-pfe-projects-management.hf.space/user/getAllEnsieg'),
+                    fetch('https://mostxfull-unitask-pfe-projects-management.hf.space/user/getAllEtudiants')
                 ]);
 
                 const teachersData = await teachersRes.json();

@@ -18,7 +18,7 @@ function FormulaireAdd({ onClose, onAdd }) {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/user/${id}`)
+    axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/${id}`)
       .then((response) => {
         if (response.data.groups && response.data.groups.length > 0) {
           setGroup(response.data.groups);
@@ -36,7 +36,7 @@ function FormulaireAdd({ onClose, onAdd }) {
 
   const handleAddEvent = async () => {
     try {
-      await axios.post(`http://localhost:8080/Meeting/saveMeeting/${id}`, {
+      await axios.post(`https://mostxfull-unitask-pfe-projects-management.hf.space/Meeting/saveMeeting/${id}`, {
         title: event.title,
         description: event.desc,
         debutDate: new Date(event.start).toISOString().replace("Z", ""),

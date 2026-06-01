@@ -15,7 +15,7 @@ function TaskDetails({ taskId, userId, onClose }) {
   useEffect(() => {
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/tache/${taskId}`);
+        const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/${taskId}`);
         const apiTask = response.data;
 
         const formattedTask = {
@@ -50,7 +50,7 @@ function TaskDetails({ taskId, userId, onClose }) {
     setStatusLoading(true);
     try {
       await axios.put(
-          `http://localhost:8080/tache/valide/${taskId}`,
+          `https://mostxfull-unitask-pfe-projects-management.hf.space/tache/valide/${taskId}`,
           {
             validateStatus: selectedStatus
           }
@@ -77,7 +77,7 @@ function TaskDetails({ taskId, userId, onClose }) {
     setCommentLoading(true);
 
     try {
-      const response = await axios.post(`http://localhost:8080/comment/add`, {
+      const response = await axios.post(`https://mostxfull-unitask-pfe-projects-management.hf.space/comment/add`, {
         auteurId: userId,
         tacheId: taskId,
         content: newComment,

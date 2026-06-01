@@ -19,7 +19,7 @@ function AddTasks() {
     useEffect(() => {
         const fetchMembers = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/group/groupUser/${id}`);
+                const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/group/groupUser/${id}`);
                 setMembers(response.data.members || []);
             } catch (err) {
                 setError('Erreur de chargement des membres');
@@ -41,7 +41,7 @@ function AddTasks() {
         if (!newTask.Idassigne) return alert("Veuillez sélectionner un membre assigné.");
 
         try {
-            await axios.post('http://localhost:8080/tache/add', {
+            await axios.post('https://mostxfull-unitask-pfe-projects-management.hf.space/tache/add', {
                 Idresponsable: id,
                 ...newTask
             });

@@ -20,7 +20,7 @@ function TaskBoard() {
   const [selectedTaskId, setSelectedTaskId] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/user/${id}`)
+    axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/${id}`)
         .then(response => {
           const userGroups = response.data.groups;
           setGroups(userGroups);

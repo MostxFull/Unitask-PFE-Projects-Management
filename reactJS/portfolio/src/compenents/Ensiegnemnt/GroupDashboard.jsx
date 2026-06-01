@@ -16,7 +16,7 @@ export default function GroupDashboard() {
   const [chartDonnees,setChartDonnes] =useState([])
 
   const fetchGroups = () => {
-    axios.get(`http://localhost:8080/user/${id}`)
+    axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/${id}`)
         .then((response) => {
           console.log(response.data)
           const transformedGroups = response.data.groups.map(group => {
@@ -55,7 +55,7 @@ export default function GroupDashboard() {
 
   useEffect(() => {
     if (selectedGroup && selectedGroup.id) {
-      axios.get(`http://localhost:8080/user/overviewEnd/${selectedGroup.id}`)
+      axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/overviewEnd/${selectedGroup.id}`)
           .then((res) => {
             setChartDonnes(res.data);
           })

@@ -9,7 +9,7 @@ export default function Groups() {
     useEffect(() => {
         const fetchGroups = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/user/getAllEnsieg');
+                const response = await axios.get('https://mostxfull-unitask-pfe-projects-management.hf.space/user/getAllEnsieg');
                 // Extraire tous les groupes de tous les enseignants
                 const allGroups = response.data.flatMap(enseignant => enseignant.groups);
                 // Éliminer les doublons par ID de groupe
@@ -26,7 +26,7 @@ export default function Groups() {
 
     const handleDelete = async (groupId) => {
         try {
-            await axios.delete(`http://localhost:8080/group/delete/${groupId}`);
+            await axios.delete(`https://mostxfull-unitask-pfe-projects-management.hf.space/group/delete/${groupId}`);
             setGroups(prev => prev.filter(g => g.id !== groupId));
         } catch (error) {
             console.error('Erreur suppression:', error);

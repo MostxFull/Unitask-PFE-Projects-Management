@@ -10,7 +10,7 @@ function GroupMemberComponent() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/user/MembresGroup/${id}`)
+      .get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/MembresGroup/${id}`)
       .then((response) => {
         setMembers(response.data.MembresGroup || []);
       })

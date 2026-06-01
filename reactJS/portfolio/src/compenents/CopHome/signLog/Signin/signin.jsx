@@ -66,8 +66,8 @@ function Signin({ onSuccess }) {
         };
 
         const url = role === 'enseignant'
-            ? 'http://localhost:8080/user/addEnseignant'
-            : 'http://localhost:8080/user/saveEtu';
+            ? 'https://mostxfull-unitask-pfe-projects-management.hf.space/user/addEnseignant'
+            : 'https://mostxfull-unitask-pfe-projects-management.hf.space/user/saveEtu';
 
         axios.post(url, requestData, {
             headers: {
@@ -259,8 +259,8 @@ export default Signin;
 //         };
 //
 //         const url = role === 'enseignant'
-//             ? 'http://localhost:8080/user/addEnseignant'
-//             : 'http://localhost:8080/user/saveEtu';
+//             ? 'https://mostxfull-unitask-pfe-projects-management.hf.space/user/addEnseignant'
+//             : 'https://mostxfull-unitask-pfe-projects-management.hf.space/user/saveEtu';
 //
 //         axios.post(url, requestData, {
 //             headers: {

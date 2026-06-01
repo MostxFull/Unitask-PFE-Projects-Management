@@ -20,7 +20,7 @@ export default function Etudinets() {
         e.preventDefault();
         try {
             const response = await axios.put(
-                `http://localhost:8080/user/updateEtu/${currentEditEtudiant.id}`,
+                `https://mostxfull-unitask-pfe-projects-management.hf.space/user/updateEtu/${currentEditEtudiant.id}`,
                 currentEditEtudiant
             );
 
@@ -46,7 +46,7 @@ export default function Etudinets() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/user/getAllEtudiants');
+                const response = await axios.get('https://mostxfull-unitask-pfe-projects-management.hf.space/user/getAllEtudiants');
                 setEtudiants(response.data);
             } catch (error) {
                 console.error('Erreur API:', error);
@@ -59,7 +59,7 @@ export default function Etudinets() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/user/deleteUser/${id}`);
+            await axios.delete(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/deleteUser/${id}`);
             setEtudiants(prev => prev.filter(e => e.id !== id));
         } catch (error) {
             console.error('Erreur suppression:', error);

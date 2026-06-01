@@ -45,7 +45,7 @@ export default function Ensiegnments() {
             };
 
             const response = await axios.put(
-                `http://localhost:8080/user/updateEnsg/${currentEditEnseignant.id}`,
+                `https://mostxfull-unitask-pfe-projects-management.hf.space/user/updateEnsg/${currentEditEnseignant.id}`,
                 updatedData
             );
 
@@ -67,7 +67,7 @@ export default function Ensiegnments() {
     useEffect(() => {
         const fetchEnseignants = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/user/getAllEnsieg');
+                const response = await axios.get('https://mostxfull-unitask-pfe-projects-management.hf.space/user/getAllEnsieg');
                 setEnseignants(response.data);
             } catch (error) {
                 console.error('Erreur API:', error);
@@ -81,7 +81,7 @@ export default function Ensiegnments() {
     // Suppression d'un enseignant
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/user/deleteUser/${id}`);
+            await axios.delete(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/deleteUser/${id}`);
             setEnseignants(prev => prev.filter(e => e.id !== id));
         } catch (error) {
             console.error('Erreur suppression:', error);
@@ -94,7 +94,7 @@ export default function Ensiegnments() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/user/addEnseignant', newEnseignant);
+            const response = await axios.post('https://mostxfull-unitask-pfe-projects-management.hf.space/user/addEnseignant', newEnseignant);
             setEnseignants([...enseignants, response.data]);
             setNewEnseignant({
                 firstName: '',

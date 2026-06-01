@@ -11,7 +11,7 @@ function AllTasks() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/tache/groupUser/${id}`);
+        const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/groupUser/${id}`);
         const formattedTasks = response.data.map(task => ({
           id: task.id,
           title: task.titre,
@@ -33,7 +33,7 @@ function AllTasks() {
 
     const checkAdminRole = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/user/isAdmin/${id}`);
+        const res = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/isAdmin/${id}`);
         setRole(res.data.isAdmin);
       } catch (error) {
         console.error("Error checking admin role:", error);

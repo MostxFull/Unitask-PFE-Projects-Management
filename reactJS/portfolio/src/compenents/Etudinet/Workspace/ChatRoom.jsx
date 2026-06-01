@@ -26,7 +26,7 @@ export default function ChatRoom() {
         const fetchUserData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8080/user/UserChatInfo/${id}`
+                    `https://mostxfull-unitask-pfe-projects-management.hf.space/user/UserChatInfo/${id}`
                 );
                 setUserData((prev) => ({
                     ...prev,
@@ -45,7 +45,7 @@ export default function ChatRoom() {
         const fetchMessages = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8080/chat/getMessageGroup/${userData.groupId}`
+                    `https://mostxfull-unitask-pfe-projects-management.hf.space/chat/getMessageGroup/${userData.groupId}`
                 );
                 const formattedMessages = response.data.map((msg) => ({
                     senderId: msg.sender.id,
@@ -78,7 +78,7 @@ export default function ChatRoom() {
     };
 
     const registerUser = () => {
-        let sock = new SockJS("http://localhost:8080/ws");
+        let sock = new SockJS("https://mostxfull-unitask-pfe-projects-management.hf.space/ws");
         stompClient = over(sock);
         stompClient.connect({}, onConnected, onError);
     };
@@ -118,7 +118,7 @@ export default function ChatRoom() {
                 JSON.stringify(chatMessage)
             );
 
-            axios.post("http://localhost:8080/chat/save", {
+            axios.post("https://mostxfull-unitask-pfe-projects-management.hf.space/chat/save", {
                 content: userData.message,
                 date: new Date().toISOString(),
                 senderId: userData.userId,

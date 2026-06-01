@@ -17,13 +17,13 @@ function FormulaireUpdate({ event, onDelete, onClose, onUpdate }) {
 
   const checkAdminRole = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/user/isAdmin/${id}`);
+      const res = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/isAdmin/${id}`);
       setRole(res.data.isAdmin);
     } catch (error) {
       console.error("Error checking admin role:", error);
     }
     try {
-      const resp = await axios.get(`http://localhost:8080/user/role/${id}`);
+      const resp = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/role/${id}`);
       const bool  = resp.data.role=="Enseignant"?true:false;
       setIsEns(bool);
     }catch (error) {

@@ -134,7 +134,7 @@ const TaskDetailsModal = ({ task, onClose, onAddComment, onAddFile, onModifieDes
     formData.append('membreId', id);
 
     try {
-      const response = await axios.post('http://localhost:8080/file/upload', formData, {
+      const response = await axios.post('https://mostxfull-unitask-pfe-projects-management.hf.space/file/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
@@ -153,7 +153,7 @@ const TaskDetailsModal = ({ task, onClose, onAddComment, onAddFile, onModifieDes
 
   const downloadFile = async (fileId, filename) => {
     try {
-      const response = await axios.get(`http://localhost:8080/file/${fileId}`, {
+      const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/file/${fileId}`, {
         responseType: 'blob'
       });
 
@@ -171,7 +171,7 @@ const TaskDetailsModal = ({ task, onClose, onAddComment, onAddFile, onModifieDes
 
   const handleDeleteFile = async (fileId) => {
     try {
-      await axios.delete(`http://localhost:8080/file/${fileId}`);
+      await axios.delete(`https://mostxfull-unitask-pfe-projects-management.hf.space/file/${fileId}`);
       setFichiers(fichiers.filter(f => f.id !== fileId));
     } catch (error) {
       console.error('Erreur suppression:', error);
@@ -395,7 +395,7 @@ const KanbanBoard = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/user/etudient/${id}`);
+        const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/etudient/${id}`);
         const apiTasks = response.data.tache;
 
         const organizedTasks = apiTasks.reduce((acc, task) => {
@@ -447,11 +447,11 @@ const KanbanBoard = () => {
 
         setTasks(newTasks);
 
-        await axios.put(`http://localhost:8080/tache/${active.id}/status`, destinationColumn, {
+        await axios.put(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/${active.id}/status`, destinationColumn, {
           headers: { "Content-Type": "text/plain" }
         });
 
-        const response = await axios.get(`http://localhost:8080/user/etudient/${id}`);
+        const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/etudient/${id}`);
         const apiTasks = response.data.tache;
 
         const organizedTasks = apiTasks.reduce((acc, task) => {
@@ -481,7 +481,7 @@ const KanbanBoard = () => {
 
   const handleAddComment = async (taskId, commentText) => {
     try {
-      const response = await axios.post("http://localhost:8080/comment/add", {
+      const response = await axios.post("https://mostxfull-unitask-pfe-projects-management.hf.space/comment/add", {
         auteurId: id,
         tacheId: taskId,
         content: commentText,
@@ -531,7 +531,7 @@ const KanbanBoard = () => {
 
   const handleModifieDescription = async (taskId, newDescription) => {
     try {
-      await axios.put(`http://localhost:8080/tache/${taskId}/description`, {
+      await axios.put(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/${taskId}/description`, {
         descreption: newDescription
       });
 

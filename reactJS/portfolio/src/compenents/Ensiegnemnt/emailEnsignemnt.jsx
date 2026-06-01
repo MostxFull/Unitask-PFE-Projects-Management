@@ -17,7 +17,7 @@ export default function EmailEnsignemnt() {
         const fetchData = async () => {
             try {
                 // Emails reçus
-                const receivedResponse = await axios.get(`http://localhost:8080/inbox/receive/${id}`);
+                const receivedResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/receive/${id}`);
                 setReceivedEmails(receivedResponse.data.map(email => ({
                     id: email.inboxId,
                     sender: email.senderName,
@@ -27,7 +27,7 @@ export default function EmailEnsignemnt() {
                 })));
 
                 // Emails envoyés
-                const sentResponse = await axios.get(`http://localhost:8080/inbox/send/${id}`);
+                const sentResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/send/${id}`);
                 setSentEmails(sentResponse.data.map(email => ({
                     id: email.inboxId,
                     recipient: email.receiverName,
@@ -47,14 +47,14 @@ export default function EmailEnsignemnt() {
         if (!replyContent.trim()) return;
 
         try {
-            await axios.post("http://localhost:8080/inbox/add", {
+            await axios.post("https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/add", {
                 subject: ` ${selectedEmail.subject}`,
                 content: replyContent,
                 receiverId: selectedEmail.senderId,
                 senderId: id
             });
 
-            const sentResponse = await axios.get(`http://localhost:8080/inbox/send/${id}`);
+            const sentResponse = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/inbox/send/${id}`);
             setSentEmails(sentResponse.data.map(email => ({
                 id: email.inboxId,
                 recipient: email.receiverName,

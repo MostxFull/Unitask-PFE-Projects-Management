@@ -15,7 +15,7 @@ function OverviewPersonel() {
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/user/${id}`)
+        axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/${id}`)
             .then(res => setUserData(res.data))
             .catch(err => console.error("Error fetching data:", err));
     }, [id]);

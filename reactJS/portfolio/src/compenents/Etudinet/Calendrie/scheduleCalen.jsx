@@ -22,14 +22,14 @@ const ScheduleCalen = () => {
 
 const checkAdminRole = async () => {
         try {
-            const res = await axios.get(`http://localhost:8080/user/isAdmin/${id}`);
+          const res = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/isAdmin/${id}`);
             setRole(res.data.isAdmin);
             console.log(res.data.isAdmin)
         } catch (error) {
             console.error("Error checking admin role:", error);
         }
         try {
-            const resp = await axios.get(`http://localhost:8080/user/role/${id}`);
+          const resp = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/role/${id}`);
             const bool  = resp.data.role=="Enseignant"?true:false;
             setIsEns(bool);
         }catch (error) {
@@ -40,7 +40,7 @@ const checkAdminRole = async () => {
         checkAdminRole();
     }, [id]);
   useEffect(() => {
-    axios.get(`http://localhost:8080/Meeting/user/${id}`)
+    axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/Meeting/user/${id}`)
       .then(response => {
         const formattedEvents = response.data.map(event => ({
           ...event,
@@ -82,7 +82,7 @@ const checkAdminRole = async () => {
       groupId: null
     };
   
-    axios.put(`http://localhost:8080/Meeting/update/${updatedEvent.id}`, payload)
+    axios.put(`https://mostxfull-unitask-pfe-projects-management.hf.space/Meeting/update/${updatedEvent.id}`, payload)
       .then(() => {
         const updatedEvents = events.map(evt => 
           evt.id === updatedEvent.id ? {
@@ -104,7 +104,7 @@ const checkAdminRole = async () => {
   const handleDeleteEvent = (eventId) => {
     const updatedEvents = events.filter(evt => evt.id !== eventId);
     setEvents(updatedEvents);
-    axios.delete(`http://localhost:8080/Meeting/delete/${eventId}`)
+    axios.delete(`https://mostxfull-unitask-pfe-projects-management.hf.space/Meeting/delete/${eventId}`)
     setSelectedEvent(null);
   };
 

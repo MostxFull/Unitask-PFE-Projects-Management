@@ -18,7 +18,7 @@ function OverviewGroup() {
     const [chartDonnees,setChartDonnes] =useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/user/Overview/${id}`)
+        axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/Overview/${id}`)
             .then(response => {
                 setChartDonnes(response.data);
                 setEncadrement(response.data.Encadrement || null);

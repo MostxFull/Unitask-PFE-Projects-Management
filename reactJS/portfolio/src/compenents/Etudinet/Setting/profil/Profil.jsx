@@ -37,7 +37,7 @@ function Profil() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/user/${id}`)
+      .get(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/${id}`)
       .then((response) => {
         setUser({
           name: response.data.lastName,
@@ -97,7 +97,7 @@ function Profil() {
     }
 
     try {
-      const response = await axios.put(`http://localhost:8080/user/changePassword/${id}`, {
+      const response = await axios.put(`https://mostxfull-unitask-pfe-projects-management.hf.space/user/changePassword/${id}`, {
         oldPassword: passwords.oldPassword,
         newPassword: passwords.newPassword,
         confirmPassword: passwords.confirmPassword,

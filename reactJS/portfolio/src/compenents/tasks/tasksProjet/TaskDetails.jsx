@@ -17,7 +17,7 @@ function TaskDetails() {
   useEffect(() => {
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/tache/${taskId}`);
+        const response = await axios.get(`https://mostxfull-unitask-pfe-projects-management.hf.space/tache/${taskId}`);
         const apiTask = response.data;
 
         const formattedTask = {
@@ -53,7 +53,7 @@ function TaskDetails() {
     setCommentLoading(true);
 
     try {
-      const response = await axios.post(`http://localhost:8080/comment/add`, {
+      const response = await axios.post(`https://mostxfull-unitask-pfe-projects-management.hf.space/comment/add`, {
         auteurId: id,
         tacheId: taskId,
         content: newComment,
