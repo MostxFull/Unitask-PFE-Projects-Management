@@ -1,5 +1,5 @@
 import React from 'react';
-import ElmCom from './ElmCom';
+import ElmCom from './elmCom';
 
 function Communitie() {
   const members = [
