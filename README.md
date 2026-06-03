@@ -10,7 +10,7 @@ Project Structure
 - `BackendProjet/` — Spring Boot backend (Maven)
 - `reactJS/portfolio/` — React frontend (Vite)
 
-- <img width="479" height="424" alt="image" src="https://github.com/user-attachments/assets/18d0e7ea-114b-4ec0-9052-1aa16cb622cc" />
+<img width="479" height="424" alt="image" src="https://github.com/user-attachments/assets/18d0e7ea-114b-4ec0-9052-1aa16cb622cc" />
 
 
 Features
