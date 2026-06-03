@@ -36,3 +36,8 @@ Where to find code
 - Backend controllers, services, entities, repositories under `BackendProjet/src/main/java/com/Backend/BackendProjet/`
 - Frontend source under `reactJS/portfolio/src/` (components, pages, Router)
 
+
+Class Diagram
+------------------
+
+<img width="905" height="756" alt="image" src="https://github.com/user-attachments/assets/310b2e82-6d39-4dcb-a6b1-58dd125835e9" />
