@@ -82,6 +82,21 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
+              <button
+                  onClick={() => navigate('/Signin')}
+                  className="relative inline-flex items-center px-6 py-2.5 text-sm font-medium
+                bg-gradient-to-r from-blue-600 to-purple-600 text-white
+                rounded-full shadow-sm hover:shadow-lg
+                transition-all duration-300 hover:scale-105
+                before:absolute before:inset-0 before:bg-white/10
+                before:rounded-full before:opacity-0
+                hover:before:opacity-100"
+              >
+                Sign in
+                <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 w-4 h-4" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
