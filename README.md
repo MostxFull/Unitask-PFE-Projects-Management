@@ -3,7 +3,7 @@ UniTask
 =============
 
 * **Full-stack project**: Spring Boot backend + React (Vite) frontend
-* **Frontend deployed**: https://unitask-pfe-projects-management-jri.vercel.app/
+* **Frontend deployed**: https://unitask-pfe-projects-management.vercel.app/
 
 Project Structure
 -----------------
