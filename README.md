@@ -2,7 +2,7 @@
 UniTask
 =============
 
-* **Full-stack project**: Spring Boot backend + React (Vite) frontend
+* **Full-stack project**: Spring Boot backend (Deployée avec HuggingFace) + React (Vite) frontend (Deployée avec Vercel) + MySQL (avec Aiven)
 * **Live demo**: https://unitask-pfe-projects-management.vercel.app/
 
 Project Structure
